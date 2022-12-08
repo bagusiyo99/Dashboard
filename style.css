@@ -1,0 +1,89 @@
+/* # untuk section */
+/* .nav (untuk Div) */
+
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;300;400&display=swap');
+
+:root {
+    --main: orange;
+    --bg: #0B1218;
+    --bg-body: #131D28;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.sidebar {
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+    background: var(--bg);
+    width: 250px;
+}
+
+.sidebar img {
+    background-color: white;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+}
+
+.sidebar h3 {
+    padding-left: 15px;
+}
+
+.brand {
+    padding: .5rem 1rem;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    height: 70px;
+}
+
+.brand span {
+    font-size: 1.8rem;
+    margin-right: .5rem;
+}
+
+.side-img {
+    height: 120px;
+    width: 120px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+    border: 4px solid #fff;
+    border-radius: 50%;
+}
+
+.user {
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-size: 20px;
+}
+
+.sidemenu {
+    padding: .5rem;
+}
+
+.sidemenu li {
+    margin-bottom: 1.5rem;
+    font-size: 20px;
+}
+
+.sidemenu a {
+    color: #fff;
+}
+
+.sidemenu a span:first-child {
+    padding: 0rem 1rem;
+}
