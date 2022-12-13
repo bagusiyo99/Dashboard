@@ -1,5 +1,7 @@
 /* # untuk section */
 /* .nav (untuk Div) */
+/*     position: absolute; (posisi sesuai bentuk */
+/*     position: fixed; (posisi sesuai diam ketika di scroll) */
 
 
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;300;400&display=swap');
@@ -20,14 +22,55 @@
     list-style-type: none;
 }
 
+input,
+button {
+    outline: none;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked~.sidebar .brand h2 {
+    display: none;
+}
+
+#menu-toggle:checked~.sidebar .side-img {
+    height: 50px;
+    width: 50px;
+}
+
+#menu-toggle:checked~.sidebar .user {
+    display: none;
+}
+
+#menu-toggle:checked~.sidebar li a span:last-child {
+    display: none;
+}
+
+#menu-toggle:checked~.sidebar {
+    width: 62px;
+}
+
+
+
+#menu-toggle:checked~.main-content {
+    margin-left: 62px;
+}
+
+#menu-toggle:checked~.main-content header {
+    left: calc(62px + 1rem);
+}
+
 .sidebar {
-    height: 5000px;
+    height: 950px;
     left: 0;
     top: 0;
-    position: fixed;
+    position: absolute;
     background: var(--bg);
     width: 280px;
     overflow-y: auto;
+    transition: width 300ms;
 }
 
 .sidebar img {
@@ -54,6 +97,9 @@
     margin-right: .5rem;
 }
 
+.logo {
+    margin-left: 3px;
+}
 
 .side-img {
     height: 120px;
@@ -63,6 +109,7 @@
     margin: auto;
     border: 4px solid #fff;
     border-radius: 50%;
+    margin-bottom: 10px;
 }
 
 .user {
@@ -107,4 +154,209 @@
 
 .main-content {
     margin-left: 280px;
+    min-height: 950px;
+    background: var(--bg-body);
+    padding: .5rem;
+    transition: margin-left 300ms;
+}
+
+header {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg);
+    padding: 0rem 1rem;
+    position: fixed;
+    left: 290px;
+    /* mengatura header */
+
+
+    right: 0;
+    top: .5rem;
+    border-radius: 5px;
+    transition: left 300ms;
+
+}
+
+.menu-toggler {
+    height: 50px;
+    width: 50px;
+    background: var(--main);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+}
+
+.search {
+    display: flex;
+    width: 300px;
+    border-radius: 30px;
+    overflow-x: hidden;
+    border: 3px solid orange;
+    align-items: center;
+}
+
+.search span {
+    font-size: 1.3rem;
+    color: #fff;
+    padding-left: 1rem;
+}
+
+
+
+.search input {
+    flex: 1;
+    height: 40px;
+    border: none;
+    background: transparent;
+    padding: 1rem;
+    color: orange;
+}
+
+.head-icons span {
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    color: white;
+}
+
+main {
+    margin-top: calc(70px + .5rem);
+    padding: 1rem 1rem;
+}
+
+
+/* ketengah membentuk cards cara pertama*/
+/* .cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+    width: 400px;
+    height: 100px;
+    background: white;
+    align-items: center;
+    (agar item ketengah)
+
+}
+
+.card .card-info,
+.card-icon {
+    text-align: center; (agar text ketengah)
+    place-items: center; 
+
+} */
+
+
+/* ketengah membentuk cards cara kedua*/
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4rem;
+}
+
+.card {
+    background: var(--bg);
+    padding: 2rem 1rem;
+}
+
+
+/* mengatur icon dan text */
+.card-icon {
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+
+.card-icon span {
+    height: 55px;
+    width: 55px;
+    color: #fff;
+    font-size: 2rem;
+    border-radius: 5px;
+    display: grid;
+    place-items: center;
+}
+
+.follow span {
+    color: #0072f2;
+    background: #e5f3fe;
+}
+
+.likes span {
+    color: #f42a26;
+    background: #e5f3fe;
+}
+
+.comment span {
+    color: #ffbc01;
+    background: #e5f3fe;
+}
+
+.card-info {
+    text-align: center;
+    margin-top: .6rem;
+}
+
+.card-info h2 {
+    font-size: 3rem;
+    color: white;
+}
+
+.card-info small {
+    display: inline-block;
+    color: var(--main);
+    font-weight: 500;
+}
+
+.card-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.3rem;
+}
+
+.card-images div {
+    height: 45px;
+    width: 45px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: 2px solid #efefef;
+    position: relative;
+    margin-left: -10px;
+}
+
+
+.card-images div:first-child {
+    margin-left: 0px;
+}
+
+.chart-gird {
+    display: grid;
+    grid-template-columns: 65% auto;
+    margin-top: 3rem;
+    grid-gap: 2.5rem;
+}
+
+.chart-follow,
+.chart-sales {
+    background: var(--bg);
+    color: #ffbc01;
+    border-radius: 13px;
+    padding: 1rem;
+}
+
+.chart-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #efefef;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ffbc01;
+    margin-bottom: 1rem;
 }
